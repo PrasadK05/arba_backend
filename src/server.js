@@ -5,6 +5,7 @@ const PORT = process.env.PORT;
 const connect = require("./config/db");
 const userRoute = require("./routes/user.route");
 const userProfile = require("./routes/profile.route");
+const categoryRoute=require("./routes/category.route");
 const fileupload = require("express-fileupload");
 
 const app = express();
@@ -15,6 +16,7 @@ app.use(fileupload({ useTempFiles: true }));
 
 app.use("/user", userRoute);
 app.use("/profile", userProfile);
+app.use("/category", categoryRoute);
 
 app.get("/", (req, res) => {
   res.send("ARBA SERVER");
