@@ -3,11 +3,18 @@ const express = require("express");
 const cors = require("cors");
 const PORT = process.env.PORT;
 const connect = require("./config/db");
+const userRoute = require("./routes/user.route");
+const userProfile = require("./routes/profile.route");
+const fileupload = require("express-fileupload");
 
 const app = express();
 app.use(cors({ origin: true, credentials: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(fileupload({ useTempFiles: true }));
+
+app.use("/user", userRoute);
+app.use("/profile", userProfile);
 
 app.get("/", (req, res) => {
   res.send("ARBA SERVER");
