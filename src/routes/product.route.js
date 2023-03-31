@@ -15,7 +15,7 @@ cloudinary.config({
 });
 
 const app = express.Router();
-// app.use(verifyToken);
+app.use(verifyToken);
 
 // Product Create-Operation
 app.post("/add-product", async (req, res) => {
@@ -157,10 +157,3 @@ app.delete("/delete-multiproduct", async (req, res) => {
   }
 });
 module.exports = app;
-
-// {
-//   "fullName":"prasad",
-//   "email":"kardeashutosh61299@gmail.com",
-//   "password":"123456",
-//   "userName":"prasad"
-// }

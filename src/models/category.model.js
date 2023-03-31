@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-let cat= new mongoose.Schema({
+let cat = new mongoose.Schema({
   name: { type: String, required: true },
   slug: { type: String, required: true },
   image: { type: String, required: true },
