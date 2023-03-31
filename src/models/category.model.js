@@ -7,6 +7,6 @@ let cat= new mongoose.Schema({
   owner: { type: mongoose.Schema.Types.ObjectId, ref: "user" },
 });
 
-let Category = mongoose.model("Category", cat);
+let Category = mongoose.model("category", cat);
 
 module.exports = Category;

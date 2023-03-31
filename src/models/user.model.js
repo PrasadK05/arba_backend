@@ -9,6 +9,6 @@ let users = new mongoose.Schema({
   otp: { type: String },
 });
 
-let User = mongoose.model("User", users);
+let User = mongoose.model("user", users);
 
 module.exports = User;
