@@ -125,14 +125,11 @@ app.get("/refresh_token", async (req, res) => {
           { email: user.email, name: user.name },
           token_secret,
           {
-            expiresIn: "1 min",
+            expiresIn: "28 days",
           }
         );
 
-        res
-          .status(200)
-          .cookie("token", tk, cookieOption)
-          .send({ status: true, token: tk, refreshToken: reToken });
+        res.send({ status: true, token: tk, refreshToken: reToken });
       } else {
         return res.status(401).send("Operation not allowed.");
       }
