@@ -5,7 +5,10 @@ let users = new mongoose.Schema({
   email: { type: String, required: true },
   password: { type: String, required: true },
   userName: { type: String, required: true },
-  avatar: { type: String },
+  avatar: {
+    type: String,
+    default: "https://cdn-icons-png.flaticon.com/128/236/236832.png",
+  },
   otp: { type: String },
 });
 

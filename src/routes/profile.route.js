@@ -49,4 +49,15 @@ app.post("/name", async (req, res) => {
   }
 });
 
+app.get("/get-profile",async (req, res)=>{
+  let { token } = req.headers;
+  let decode = jwt.decode(token, token_secret);
+  try {
+    let get = await User.findOne({email:decode.email})
+    return res.send({ status: true, messege: "name updated successfully", result:get });
+  } catch (error) {
+    return res.send({ status: false, messege: "something went wrong"});
+  }
+})
+
 module.exports = app;
