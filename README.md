@@ -24,6 +24,8 @@ An ecommerce websites server
 ```http
   POST /user/signup
   POST /user/login
+  POST /user/get-otp
+  POST /user/forgot-password
 ```
 
 | Body | Type     | Description                |
